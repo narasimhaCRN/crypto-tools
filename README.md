@@ -10,7 +10,14 @@ Before running the script, ensure the following dependencies are installed in yo
 - `cryptography`
 - `hashlib`
 - `os`
+- `subprocess`
 
+### Required Software:
+- `OpenSSL:` Ensure that OpenSSL is installed and accessible from your terminal/command prompt. To verify that OpenSSL is installed correctly, run the following command in your terminal or command prompt 
+
+```bash
+openssl version
+```
 ### Installing Dependencies:
 
 1. **Create a Virtual Environment** (Optional, but recommended)
@@ -94,18 +101,4 @@ Once you have set the environment variables and installed the required dependenc
 ```bash
 python verify_public_key.py
 ```
----
-## Example Output
-When the fingerprints match, it means that the integrity of the RSA public key is intact and verified. In this case, an output looks like the following: 
-```bash
-Computed Fingerprint:  5d41402abc4b2a76b9719d911017c592
-Provided Fingerprint:  5d41402abc4b2a76b9719d911017c592
-The fingerprints match!
-```
-If the fingerprints don't match, it signals potential tampering or corruption, meaning something is wrong in the process of verification. Exceptions are usually thrown if there are any. 
-In the case where there is no exeception but the fingerprint mismatches, an output looks like the following:
-```bash
-Computed Fingerprint:  5d41402abc4b2a76b9719d911017c592
-Provided Fingerprint:  abvederabc4b2a76b9719d911017c998
-The fingerprints do not match. Exceptions: None
-```
+
